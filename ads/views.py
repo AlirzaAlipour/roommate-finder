@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Ad
+from .serializers import AdSerializer
 
-# Create your views here.
+class AdViewSet (ModelViewSet):
+    queryset = Ad.objects.all()
+    serializer_class = AdSerializer
