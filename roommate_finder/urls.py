@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import ads
 import ads.urls
+import profiles.urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
     path("", include(ads.urls)),
+    path("", include(profiles.urls)),
 ]
